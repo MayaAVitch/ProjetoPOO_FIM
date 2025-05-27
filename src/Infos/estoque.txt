@@ -1,0 +1,6 @@
+nome, quantidade, preco
+Carne, 20, 59.99
+Leite, 15, 15.00
+Tomate, 40, 1.50
+Sabonete, 45, 3.50
+Caneta, 100, 2.50
