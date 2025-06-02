@@ -1,4 +1,4 @@
-package Infos.Interfaces;
+package Infos.Produtos.Interfaces;
 
 public interface ProdutoPerecivel {
     // Apenas exibe a data de validade
@@ -8,5 +8,5 @@ public interface ProdutoPerecivel {
     void verificarSeEstaVencido();
 
     // Dias restantes ate o produto vencer
-    public void diasParaVencer();
+    void diasParaVencer();
 }
