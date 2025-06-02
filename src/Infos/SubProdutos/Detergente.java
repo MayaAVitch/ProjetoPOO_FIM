@@ -3,10 +3,10 @@ package Infos.SubProdutos;
 import Infos.Produto;
 import Infos.Interfaces.ProdutosComGarantia;
 
-public class Caneta extends Produto implements ProdutosComGarantia {
+public class Detergente extends Produto implements ProdutosComGarantia {
 
     // Construtor
-    public Caneta(String nome, int quantidade, double preco){super(nome, quantidade, preco);}
+    public Detergente(String nome, int quantidade, double preco){super(nome, quantidade, preco);}
 
     // Metodos
     @Override
@@ -21,6 +21,6 @@ public class Caneta extends Produto implements ProdutosComGarantia {
 
     @Override
     public void aplicarGarantia() {
-        System.out.println("Garantia aplicada! Caneta será substituída.");
+        System.out.println("Garantia aplicada! Detergente será substituído.");
     }
 }
