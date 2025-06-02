@@ -9,12 +9,13 @@ public class Tomate extends Produto implements ProdutoPerecivel {
     // Variável
     private LocalDate dataValidade;
 
-    // Construtor corrigido - faltava o parâmetro dataValidadeStr
+    // Construtor corrigido
     public Tomate(String nome, int quantidade, double preco, String dataValidadeStr) {
         super(nome, quantidade, preco);
         this.dataValidade = LocalDate.parse(dataValidadeStr, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
+    // Exibe todas as informações do produto
     @Override
     public void exibirInformacoes() {
         System.out.println("O produto " + super.nome +
@@ -25,12 +26,16 @@ public class Tomate extends Produto implements ProdutoPerecivel {
         verificarSeEstaVencido(); // Chama o método da interface
     }
 
+    // Exibe a data de validade formatada no padrão dd/MM/yyyy
+    // Utiliza o DateTimeFormatter para padronizar a exibição
     @Override
     public void exibirDataValidade() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         System.out.println("Data de validade: " + dataValidade.format(formatter));
     }
 
+    // Verifica se o produto está vencido comparando a data de validade com a data atual
+    // Exibe mensagem de alerta se o produto estiver vencido
     @Override
     public void verificarSeEstaVencido() {
         if (dataValidade.isBefore(LocalDate.now())) {
@@ -40,6 +45,8 @@ public class Tomate extends Produto implements ProdutoPerecivel {
         }
     }
 
+    // Calcula e exibe quantos dias faltam para o produto vencer.
+    // Se o valor for negativo, significa que já está vencido.
     @Override
     public void diasParaVencer() {
         long dias = java.time.temporal.ChronoUnit.DAYS.between(
