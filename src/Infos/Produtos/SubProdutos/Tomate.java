@@ -51,6 +51,6 @@ public class Tomate extends Produto implements ProdutoPerecivel {
     public void diasParaVencer() {
         long dias = java.time.temporal.ChronoUnit.DAYS.between(
                 LocalDate.now(), dataValidade);
-        System.out.println("Dias restantes para vencer: " + dias);
+        System.out.println("Dias restantes para o estoque de tomates vencer: " + dias);
     }
 }
