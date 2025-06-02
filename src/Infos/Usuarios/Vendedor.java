@@ -12,7 +12,9 @@ public class Vendedor extends Usuario {
         System.out.println("Salário: " + salario);
         System.out.println("Cargo: " + cargo);
     }
-    
+
+    int quantVender;
+
     //Métodos
     public void vender(){
 
