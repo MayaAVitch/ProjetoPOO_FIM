@@ -26,12 +26,16 @@ public class Carne extends Produto implements ProdutoPerecivel {
         verificarSeEstaVencido();
     }
 
+    // Exibe a data de validade formatada no padrão dd/MM/yyyy
+    // Utiliza o DateTimeFormatter para padronizar a exibição
     @Override
     public void exibirDataValidade() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         System.out.println("Data de validade: " + dataValidade.format(formatter));
     }
 
+    // Verifica se o produto está vencido comparando a data de validade com a data atual
+    // Exibe mensagem de alerta se o produto estiver vencido
     @Override
     public void verificarSeEstaVencido() {
         if (dataValidade.isBefore(LocalDate.now())) {
@@ -41,6 +45,8 @@ public class Carne extends Produto implements ProdutoPerecivel {
         }
     }
 
+    // Calcula e exibe quantos dias faltam para o produto vencer.
+    // Se o valor for negativo, significa que já está vencido.
     @Override
     public void diasParaVencer() {
         long dias = java.time.temporal.ChronoUnit.DAYS.between(
