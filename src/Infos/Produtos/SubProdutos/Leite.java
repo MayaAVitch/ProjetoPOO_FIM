@@ -38,7 +38,7 @@ public class Leite extends Produto implements ProdutoPerecivel {
     @Override
     public void verificarSeEstaVencido() {
         if (dataValidade.isBefore(LocalDate.now())) {
-            System.out.println("ATENÇÃO: Este tomate está vencido!");
+            System.out.println("ATENÇÃO: Este leite está vencido!");
         } else {
             System.out.println("Produto dentro do prazo de validade.");
         }
@@ -50,7 +50,7 @@ public class Leite extends Produto implements ProdutoPerecivel {
     public void diasParaVencer() {
         long dias = java.time.temporal.ChronoUnit.DAYS.between(
                 LocalDate.now(), dataValidade);
-        System.out.println("Dias restantes para vencer: " + dias);
+        System.out.println("Dias restantes para o estoque de leite vencer: " + dias);
     }
 }
 
