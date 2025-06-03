@@ -16,7 +16,19 @@ public class Vendedor extends Usuario {
     int quantVender;
 
     //Métodos
-    public void vender(){
+    public void vender(MenuControledeEstoque menu) {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Digite o nome do produto a vender: ");
+        String produto = scanner.nextLine();
+
+        System.out.print("Digite a quantidade a vender: ");
+        int quantidade = scanner.nextInt();
+
+        try {
+            menu.menuestoque(produto, quantidade);
+        } catch (EstoqueInsuficienteException e) {
+            System.out.println("Erro na venda: " + e.getMessage());
+        }
     }
 }
