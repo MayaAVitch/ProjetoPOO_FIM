@@ -18,8 +18,6 @@ public class Gerente extends Usuario{
         System.out.println("Cargo: " + cargo);
     }
 
-    int quantComprar;
-
     public void vender(MenuControledeEstoque menu) {
         Scanner scanner = new Scanner(System.in);
 
