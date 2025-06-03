@@ -20,29 +20,20 @@ public class Gerente extends Usuario{
 
     int quantComprar;
 
-    public void vender(){
-        Scanner prodvend = new Scanner(System.in);
-        System.out.print("Digite Produto a ser Vendido: ");
-        String prodVender = prodvend.nextLine();
+    public void vender(MenuControledeEstoque menu) {
+        Scanner scanner = new Scanner(System.in);
 
-        switch (prodVender){
-            case "Carne":
-                Scanner quantidadevend = new Scanner(System.in);
-                System.out.print("Digite Quantidade a ser Vendida: ");
-                int quantVender = quantidadevend.nextInt();
+        System.out.print("Digite o nome do produto a vender: ");
+        String produto = scanner.nextLine();
 
-                try {
+        System.out.print("Digite a quantidade a vender: ");
+        int quantidade = scanner.nextInt();
 
-
-                }catch (Exception e){
-                    System.out.println("Erro: Estoque Insuficiente para Venda");
-                    e.printStackTrace();
-                }
-
+        try {
+            menu.menuestoque(produto, quantidade);
+        } catch (EstoqueInsuficienteException e) {
+            System.out.println("Erro na venda: " + e.getMessage());
         }
-
-
-
     }
 
     public void comprar(){
