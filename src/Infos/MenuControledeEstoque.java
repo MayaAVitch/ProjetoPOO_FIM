@@ -7,10 +7,10 @@ import Infos.Produtos.SubProdutos.Tomate;
 
 public class MenuControledeEstoque {
 
-    Carne carneEstoque = new Carne("Alcatra Bovina", 20, 47.90, "Oi");
+    Carne carneEstoque = new Carne("Alcatra Bovina", 20, 47.90, "01/01/2023");
     Detergente detergenteEstoque = new Detergente("Detergente Ypê Neutro",100, 2.99);
-    Tomate tomateEstoque = new Tomate("Tomate Carmem",40, 1.89, "Oi");
-    Leite leiteEstoque = new Leite("Leite CooperRita", 15, 4.99, "Oi");
+    Tomate tomateEstoque = new Tomate("Tomate Carmem",40, 1.89, "01/01/2025");
+    Leite leiteEstoque = new Leite("Leite CooperRita", 15, 4.99, "01/01/2026");
     Sabonete saboneteEstoque = new Sabonete("Sabonete Francis", 45, 2.89);
 
     public void menuestoque(String nomeProduto, int quantidadevend) throws EstoqueInsuficienteException {
