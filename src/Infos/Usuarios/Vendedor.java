@@ -1,5 +1,9 @@
 package Infos.Usuarios;
 
+import Infos.EstoqueInsuficienteException;
+
+import java.util.Scanner;
+
 public class Vendedor extends Usuario {
 
     public Vendedor(String nome, String cargo, int cpf, double salario){super(nome, cargo, cpf, salario);}
