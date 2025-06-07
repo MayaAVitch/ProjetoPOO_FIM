@@ -1,4 +1,5 @@
 package Infos;
+
 import Infos.Produtos.SubProdutos.Carne;
 import Infos.Produtos.SubProdutos.Detergente;
 import Infos.Produtos.SubProdutos.Leite;
@@ -7,11 +8,24 @@ import Infos.Produtos.SubProdutos.Tomate;
 
 public class MenuControledeEstoque {
 
-    Carne carneEstoque = new Carne("Alcatra Bovina", 20, 47.90, "01/01/2023");
-    Detergente detergenteEstoque = new Detergente("Detergente Ypê Neutro",100, 2.99);
-    Tomate tomateEstoque = new Tomate("Tomate Carmem",40, 1.89, "01/01/2025");
-    Leite leiteEstoque = new Leite("Leite CooperRita", 15, 4.99, "01/01/2026");
-    Sabonete saboneteEstoque = new Sabonete("Sabonete Francis", 45, 2.89);
+    /** Estoque dos produtos disponíveis. Tornado público para
+     *  permitir o acesso pelos usuários localizados em subpacotes. */
+    public Carne carneEstoque = new Carne("Alcatra Bovina", 20, 47.90, "01/01/2023");
+    public Detergente detergenteEstoque = new Detergente("Detergente Ypê Neutro",100, 2.99);
+    public Tomate tomateEstoque = new Tomate("Tomate Carmem",40, 1.89, "01/01/2025");
+    public Leite leiteEstoque = new Leite("Leite CooperRita", 15, 4.99, "01/01/2026");
+    public Sabonete saboneteEstoque = new Sabonete("Sabonete Francis", 45, 2.89);
+
+    private final GerenciadorArquivos arquivo;
+
+    public MenuControledeEstoque() {
+        arquivo = new GerenciadorArquivos("src/Infos/estoque.txt");
+        arquivo.carregarEstoque(this);
+    }
+
+    public void salvarArquivo() {
+        arquivo.salvarEstoque(this);
+    }
 
     public void menuestoque(String nomeProduto, int quantidadevend) throws EstoqueInsuficienteException {
         switch (nomeProduto.toLowerCase()) {
@@ -22,14 +36,16 @@ public class MenuControledeEstoque {
                 carneEstoque.setQuantidade(carneEstoque.getQuantidade() - quantidadevend);
                 System.out.println("Venda realizada: " + quantidadevend + " unidades de " + carneEstoque.getNome());
                 System.out.println("Estoque restante: " + carneEstoque.getQuantidade());
+                salvarArquivo();
                 break;
             case "detergente":
                 if (quantidadevend > detergenteEstoque.getQuantidade()) {
-                throw new EstoqueInsuficienteException("Estoque insuficiente de " + detergenteEstoque.getNome());
+                    throw new EstoqueInsuficienteException("Estoque insuficiente de " + detergenteEstoque.getNome());
                 }
                 detergenteEstoque.setQuantidade(detergenteEstoque.getQuantidade() - quantidadevend);
                 System.out.println("Venda realizada: " + quantidadevend + " unidades de " + detergenteEstoque.getNome());
                 System.out.println("Estoque restante: " + detergenteEstoque.getQuantidade());
+                salvarArquivo();
                 break;
             case "tomate":
                 if (quantidadevend > tomateEstoque.getQuantidade()) {
@@ -38,6 +54,7 @@ public class MenuControledeEstoque {
                 tomateEstoque.setQuantidade(tomateEstoque.getQuantidade() - quantidadevend);
                 System.out.println("Venda realizada: " + quantidadevend + " unidades de " + tomateEstoque.getNome());
                 System.out.println("Estoque restante: " + tomateEstoque.getQuantidade());
+                salvarArquivo();
                 break;
             case "leite":
                 if (quantidadevend > leiteEstoque.getQuantidade()) {
@@ -46,6 +63,7 @@ public class MenuControledeEstoque {
                 leiteEstoque.setQuantidade(leiteEstoque.getQuantidade() - quantidadevend);
                 System.out.println("Venda realizada: " + quantidadevend + " unidades de " + leiteEstoque.getNome());
                 System.out.println("Estoque restante: " + leiteEstoque.getQuantidade());
+                salvarArquivo();
                 break;
             case "sabonete":
                 if (quantidadevend > saboneteEstoque.getQuantidade()) {
@@ -54,6 +72,7 @@ public class MenuControledeEstoque {
                 saboneteEstoque.setQuantidade(saboneteEstoque.getQuantidade() - quantidadevend);
                 System.out.println("Venda realizada: " + quantidadevend + " unidades de " + saboneteEstoque.getNome());
                 System.out.println("Estoque restante: " + saboneteEstoque.getQuantidade());
+                salvarArquivo();
                 break;
             default:
                 System.out.println("Produto não encontrado.");

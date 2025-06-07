@@ -1,6 +1,4 @@
 package Infos.Usuarios;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 import Infos.MenuControledeEstoque;
 import Infos.EstoqueInsuficienteException;
@@ -46,10 +44,10 @@ public class Gerente extends Usuario{
         System.out.print("Digite a quantidade para reabastecer " + produto + ": ");
         int quantidadeCompra = scanner.nextInt();
 
-        switch (produto.toLowerCase()) {
-            case "carne":
-                menu.carneEstoque.setQuantidade(menu.carneEstoque.getQuantidade() + quantidadeCompra);
-                break;
+        switch (produto.toLowerCase()) {␊
+            case "carne":␊
+                menu.carneEstoque.setQuantidade(menu.carneEstoque.getQuantidade() + quantidadeCompra);␊
+                break;␊
             case "detergente":
                 menu.detergenteEstoque.setQuantidade(menu.detergenteEstoque.getQuantidade() + quantidadeCompra);
                 break;
@@ -68,6 +66,7 @@ public class Gerente extends Usuario{
         }
 
         System.out.println("Reabastecimento realizado. Novo estoque de " + produto + ": " + obterQuantidade(menu, produto));
+        menu.salvarArquivo();
     }
 
     private boolean verificarEstoqueZerado(MenuControledeEstoque menu, String produto) {
@@ -94,13 +93,4 @@ public class Gerente extends Usuario{
             case "detergente":
                 return menu.detergenteEstoque.getQuantidade();
             case "tomate":
-                return menu.tomateEstoque.getQuantidade();
-            case "leite":
-                return menu.leiteEstoque.getQuantidade();
-            case "sabonete":
-                return menu.saboneteEstoque.getQuantidade();
-            default:
-                return -1;
-        }
-    }
-}
+                src/Infos/Usuarios/Vendedor.java
