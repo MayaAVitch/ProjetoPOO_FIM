@@ -56,8 +56,8 @@ public class GerenciadorArquivos {
             bw.write("Sabonete, " + menu.saboneteEstoque.getQuantidade() + ", " + menu.saboneteEstoque.getPreco() + "\n");
             bw.write("Detergente, " + menu.detergenteEstoque.getQuantidade() + ", " + menu.detergenteEstoque.getPreco() + "\n");
         } catch (IOException e) {
-            System.out.println("Erro ao salvar arquivo: "
-                     e.getMessage());
+            System.out.println("Erro ao salvar arquivo: ");
+                     e.getMessage();
         }
     }
 }
