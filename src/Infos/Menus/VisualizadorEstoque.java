@@ -5,10 +5,12 @@ import Infos.MenuControledeEstoque;
 public class VisualizadorEstoque {
     private MenuControledeEstoque estoque;
 
+    // Visualiaza todo o estoque
     public VisualizadorEstoque(MenuControledeEstoque estoque) {
         this.estoque = estoque;
     }
 
+    // Mostra todo o estoque
     public void mostrarEstoque() {
         System.out.println("\n=== ESTOQUE ATUAL ===");
         System.out.println("Carne: " + estoque.carneEstoque.getQuantidade() + " unidades");
@@ -18,6 +20,7 @@ public class VisualizadorEstoque {
         System.out.println("Sabonete: " + estoque.saboneteEstoque.getQuantidade() + " unidades");
     }
 
+    // Metodo que mostra todos os produtos pereciveis
     public void mostrarPereciveis() {
         System.out.println("\n=== PRODUTOS PERECÍVEIS ===");
         System.out.println("-- Carne --");
