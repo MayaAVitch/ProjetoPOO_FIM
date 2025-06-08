@@ -7,10 +7,12 @@ import java.util.Scanner;
 
 public class Vendedor extends Usuario {
 
-    public Vendedor(String nome, String cargo, int cpf, double salario){super(nome, cargo, cpf, salario);}
+    public Vendedor(String nome, String cargo, int cpf, double salario) {
+        super(nome, cargo, cpf, salario);
+    }
 
     @Override
-    public void exibirInfo(){
+    public void exibirInfo() {
         System.out.println("Informações do Usuário: ");
         System.out.println("Nome: " + nome);
         System.out.println("CPF: " + cpf);
@@ -27,3 +29,5 @@ public class Vendedor extends Usuario {
         System.out.print("Digite o nome do produto a vender: ");
         String produto = scanner.nextLine();
 
+    }
+}

@@ -4,11 +4,13 @@ import Infos.MenuControledeEstoque;
 import Infos.EstoqueInsuficienteException;
 
 
-public class Gerente extends Usuario{
-    public Gerente(String nome, String cargo, int cpf, double salario){super(nome, cargo, cpf, salario);}
+public class Gerente extends Usuario {
+    public Gerente(String nome, String cargo, int cpf, double salario) {
+        super(nome, cargo, cpf, salario);
+    }
 
     @Override
-    public void exibirInfo(){
+    public void exibirInfo() {
         System.out.println("Informações do Usuário: ");
         System.out.println("Nome: " + nome);
         System.out.println("CPF: " + cpf);
@@ -44,10 +46,10 @@ public class Gerente extends Usuario{
         System.out.print("Digite a quantidade para reabastecer " + produto + ": ");
         int quantidadeCompra = scanner.nextInt();
 
-        switch (produto.toLowerCase()) {␊
-            case "carne":␊
-                menu.carneEstoque.setQuantidade(menu.carneEstoque.getQuantidade() + quantidadeCompra);␊
-                break;␊
+        switch (produto.toLowerCase()) {
+            case "carne":
+                menu.carneEstoque.setQuantidade(menu.carneEstoque.getQuantidade() + quantidadeCompra);
+                break;
             case "detergente":
                 menu.detergenteEstoque.setQuantidade(menu.detergenteEstoque.getQuantidade() + quantidadeCompra);
                 break;
@@ -93,4 +95,13 @@ public class Gerente extends Usuario{
             case "detergente":
                 return menu.detergenteEstoque.getQuantidade();
             case "tomate":
-                src/Infos/Usuarios/Vendedor.java
+                return menu.tomateEstoque.getQuantidade();
+            case "leite":
+                return menu.leiteEstoque.getQuantidade();
+            case "sabonete":
+                return menu.saboneteEstoque.getQuantidade();
+            default:
+                return 0;
+        }
+    }
+}
