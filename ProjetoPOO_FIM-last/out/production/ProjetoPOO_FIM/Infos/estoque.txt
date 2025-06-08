@@ -1,0 +1,6 @@
+nome, quantidade, preco
+Carne, 73, 59.99
+Leite, 50, 15.0
+Tomate, 40, 1.5
+Sabonete, 45, 3.5
+Detergente, 100, 2.5
