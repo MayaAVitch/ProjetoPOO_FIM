@@ -47,7 +47,7 @@ public class GerenciadorArquivos {
         }
     }
 
-    public void salvarEstoque(@org.jetbrains.annotations.NotNull MenuControledeEstoque menu) {
+    public void salvarEstoque(MenuControledeEstoque menu) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(caminho))) {
             bw.write("nome, quantidade, preco\n");
             bw.write("Carne, " + menu.carneEstoque.getQuantidade() + ", " + menu.carneEstoque.getPreco() + "\n");
