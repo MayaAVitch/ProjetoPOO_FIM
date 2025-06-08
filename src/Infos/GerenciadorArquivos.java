@@ -47,7 +47,7 @@ public class GerenciadorArquivos {
         }
     }
 
-    public void salvarEstoque(@org.jetbrains.annotations.NotNull MenuControledeEstoque menu) {
+    public void salvarEstoque(MenuControledeEstoque menu) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(caminho))) {
             bw.write("nome, quantidade, preco\n");
             bw.write("Carne, " + menu.carneEstoque.getQuantidade() + ", " + menu.carneEstoque.getPreco() + "\n");
@@ -56,7 +56,8 @@ public class GerenciadorArquivos {
             bw.write("Sabonete, " + menu.saboneteEstoque.getQuantidade() + ", " + menu.saboneteEstoque.getPreco() + "\n");
             bw.write("Detergente, " + menu.detergenteEstoque.getQuantidade() + ", " + menu.detergenteEstoque.getPreco() + "\n");
         } catch (IOException e) {
-            System.out.println("Erro ao salvar arquivo: " + e.getMessage());
+            System.out.println("Erro ao salvar arquivo: "
+                     e.getMessage());
         }
     }
 }
