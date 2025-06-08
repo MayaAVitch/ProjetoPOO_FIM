@@ -39,7 +39,7 @@ public class Carne extends Produto implements ProdutoPerecivel {
     @Override
     public void verificarSeEstaVencido() {
         if (dataValidade.isBefore(LocalDate.now())) {
-            System.out.println("ATENÇÃO: Este carnes está vencido!");
+            System.out.println("ATENÇÃO: Esta carne está vencido!");
         } else {
             System.out.println("Produto dentro do prazo de validade.");
         }
