@@ -1,4 +1,6 @@
-package Infos;
+package Infos.Menus;
+
+import Infos.MenuControledeEstoque;
 
 public class VisualizadorEstoque {
     private MenuControledeEstoque estoque;
