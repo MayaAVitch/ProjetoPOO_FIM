@@ -1,5 +1,7 @@
-package Infos;
+package Infos.Menus.Estoques;
 
+import Infos.EstoqueInsuficienteException;
+import Infos.Menus.GerenciadorArquivos;
 import Infos.Produtos.SubProdutos.Carne;
 import Infos.Produtos.SubProdutos.Detergente;
 import Infos.Produtos.SubProdutos.Leite;

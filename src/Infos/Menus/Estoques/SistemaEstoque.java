@@ -1,5 +1,6 @@
-package Infos;
+package Infos.Menus.Estoques;
 
+import Infos.Menus.InterfaceUsuario;
 import Infos.Usuarios.Gerente;
 import Infos.Usuarios.Vendedor;
 

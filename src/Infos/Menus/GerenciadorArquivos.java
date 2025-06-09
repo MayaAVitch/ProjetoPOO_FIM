@@ -1,4 +1,6 @@
-package Infos;
+package Infos.Menus;
+
+import Infos.Menus.Estoques.MenuControledeEstoque;
 
 import java.io.*;
 

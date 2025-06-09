@@ -1,6 +1,6 @@
 package Infos.Usuarios;
 import java.util.Scanner;
-import Infos.MenuControledeEstoque;
+import Infos.Menus.Estoques.MenuControledeEstoque;
 import Infos.EstoqueInsuficienteException;
 
 
