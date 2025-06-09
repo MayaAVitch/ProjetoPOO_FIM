@@ -7,7 +7,7 @@ import java.io.*;
 public class GerenciadorArquivos {
     private final String caminho;
 
-    public GerenciadorArquivos(String caminho) { //Atributo "caminho" passado no momento da criação do objeto
+    public GerenciadorArquivos(String caminho) { //Atributo "caminho" que é passado no momento da criação do objeto
         this.caminho = caminho;
     }
 
@@ -49,7 +49,7 @@ public class GerenciadorArquivos {
         }
     }
 
-    public void salvarEstoque(MenuControledeEstoque menu) { //Chamado quando há alteração no estoque (venda ou reabastecimento), reescrevendo o arquivo com os dados atualizados.
+    public void salvarEstoque(MenuControledeEstoque menu) { // Metodo chamado no momento em que há alteração no estoque (venda ou reabastecimento), reescrevendo o arquivo com os dados atualizados.
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(caminho))) { //Sobrescreve o conteúdo anterior
             bw.write("nome, quantidade, preco\n"); //cabeçalho do arquivo
             bw.write("Carne, " + menu.carneEstoque.getQuantidade() + ", " + menu.carneEstoque.getPreco() + "\n");
