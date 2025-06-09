@@ -42,6 +42,8 @@ public class InterfaceUsuario {
             System.out.println("3 - Verificar estoque");
             System.out.println("4 - Exibir informações do usuário");
             System.out.println("5 - Ver produtos perecíveis");
+            System.out.println("6 - Ver produtos com garantia");
+            System.out.println("7 - Aplicar garantia em algum produto");
             System.out.println("0 - Sair");
             System.out.print("Opção: ");
             // Variavel para armazenar a opção
@@ -65,6 +67,10 @@ public class InterfaceUsuario {
                 case 4 -> gerente.exibirInfo();
                 // Mostra Produtos Pereciveis
                 case 5 -> new VisualizadorEstoque(estoque).mostrarPereciveis();
+                // Mostra Produtos Com Garantia
+                case 6 -> new VisualizadorEstoque(estoque).mostrarGarantia();
+                // Aplicando Garantia
+                case 7 -> new VisualizadorEstoque(estoque).aplicandoGarantia();
                 // Saindo do Sistema
                 case 0 -> System.out.println("Saindo do sistema...");
                 // Mensagem padrao
