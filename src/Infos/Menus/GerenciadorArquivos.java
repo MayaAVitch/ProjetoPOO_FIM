@@ -12,8 +12,8 @@ public class GerenciadorArquivos {
     }
 
     public void carregarEstoque(MenuControledeEstoque menu) { //Metodo que faz a leitura do arquivo e preenche os objetos de estoque com os dados encontrados.
-        try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
-            String linha = br.readLine(); // cabeçalho
+        try (BufferedReader br = new BufferedReader(new FileReader(caminho))) { //Abre o arquivo com o bufferedReader e garante que ele seja fechado por meio do try-with-resources.
+            String linha = br.readLine(); //Lê e descarta pq é o cabeçalho
             while ((linha = br.readLine()) != null) {
                 String[] partes = linha.split(","); //divide a linha usando vírgulas
                 if (partes.length < 3) continue; //Verifica se há pelo menos três partes: nome, quantidade e preço.
