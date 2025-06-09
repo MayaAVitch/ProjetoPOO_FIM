@@ -7,21 +7,21 @@ import java.io.*;
 public class GerenciadorArquivos {
     private final String caminho;
 
-    public GerenciadorArquivos(String caminho) {
+    public GerenciadorArquivos(String caminho) { //Atributo que define o caminho do arquivo no momento da criação do objeto
         this.caminho = caminho;
     }
 
-    public void carregarEstoque(MenuControledeEstoque menu) { //Metodo
+    public void carregarEstoque(MenuControledeEstoque menu) { //Metodo que faz a leitura do arquivo e preenche os objetos de estoque com os dados encontrados.
         try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
             String linha = br.readLine(); // cabeçalho
             while ((linha = br.readLine()) != null) {
-                String[] partes = linha.split(",");
-                if (partes.length < 3) continue;
+                String[] partes = linha.split(","); //divide a linha usando vírgulas
+                if (partes.length < 3) continue; //Verifica se há pelo menos três partes: nome, quantidade e preço.
                 String nome = partes[0].trim();
-                int quantidade = Integer.parseInt(partes[1].trim());
+                int quantidade = Integer.parseInt(partes[1].trim()); //Converte essas partes para os tipos corretos.
                 double preco = Double.parseDouble(partes[2].trim());
 
-                switch (nome.toLowerCase()) {
+                switch (nome.toLowerCase()) { //Identifica o produto pelo nome e atualiza os objetos correspondentes no MenuControledeEstoque.
                     case "carne" -> {
                         menu.carneEstoque.setQuantidade(quantidade);
                         menu.carneEstoque.setPreco(preco);
@@ -49,8 +49,8 @@ public class GerenciadorArquivos {
         }
     }
 
-    public void salvarEstoque(MenuControledeEstoque menu) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(caminho))) {
+    public void salvarEstoque(MenuControledeEstoque menu) { //Metodo quando tem alteração no estoque, venda ou reabastecimento, reescrevendo o arquivo com os dados atualizados.
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(caminho))) { //Sobrescreve o conteúdo anterior
             bw.write("nome, quantidade, preco\n");
             bw.write("Carne, " + menu.carneEstoque.getQuantidade() + ", " + menu.carneEstoque.getPreco() + "\n");
             bw.write("Leite, " + menu.leiteEstoque.getQuantidade() + ", " + menu.leiteEstoque.getPreco() + "\n");
