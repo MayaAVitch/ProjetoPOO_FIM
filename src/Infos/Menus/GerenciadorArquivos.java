@@ -11,7 +11,7 @@ public class GerenciadorArquivos {
         this.caminho = caminho;
     }
 
-    public void carregarEstoque(MenuControledeEstoque menu) {
+    public void carregarEstoque(MenuControledeEstoque menu) { //Metodo
         try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
             String linha = br.readLine(); // cabeçalho
             while ((linha = br.readLine()) != null) {

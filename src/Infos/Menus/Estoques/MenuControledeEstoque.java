@@ -20,9 +20,9 @@ public class MenuControledeEstoque {
 
     private final GerenciadorArquivos arquivo;
 
-    public MenuControledeEstoque() {
+    public MenuControledeEstoque() { //Construtor da classe
         arquivo = new GerenciadorArquivos("src/Infos/estoque.txt");
-        arquivo.carregarEstoque(this);
+        arquivo.carregarEstoque(this); // Preenche os atributos da intancia atual com os dados do arquivo
     }
 
     public void salvarArquivo() {
