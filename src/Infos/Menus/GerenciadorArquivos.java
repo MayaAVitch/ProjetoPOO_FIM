@@ -7,7 +7,7 @@ import java.io.*;
 public class GerenciadorArquivos {
     private final String caminho;
 
-    public GerenciadorArquivos(String caminho) { //Atributo que define o caminho do arquivo passado no momento da criação do objeto
+    public GerenciadorArquivos(String caminho) { //Atributo "caminho" passado no momento da criação do objeto
         this.caminho = caminho;
     }
 
