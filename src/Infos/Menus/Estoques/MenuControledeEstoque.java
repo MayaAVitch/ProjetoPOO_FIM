@@ -10,8 +10,7 @@ import Infos.Produtos.SubProdutos.Tomate;
 
 public class MenuControledeEstoque {
 
-    /** Estoque dos produtos disponíveis. Tornado público para
-     *  permitir o acesso pelos usuários localizados em subpacotes. */
+    /** Estoque dos produtos disponíveis. Publicos para facil acesso pelos outros pacotes e subpacotes. */
     public Carne carneEstoque = new Carne("Alcatra Bovina", 20, 47.90, "01/01/2023");
     public Detergente detergenteEstoque = new Detergente("Detergente Ypê Neutro",100, 2.99);
     public Tomate tomateEstoque = new Tomate("Tomate Carmem",40, 1.89, "01/01/2025");
@@ -22,13 +21,14 @@ public class MenuControledeEstoque {
 
     public MenuControledeEstoque() { //Construtor da classe
         arquivo = new GerenciadorArquivos("src/Infos/estoque.txt");
-        arquivo.carregarEstoque(this); // Preenche os atributos da intancia atual com os dados do arquivo
+        arquivo.carregarEstoque(this); // Preenche os atributos da instancia atual com os dados do arquivo
     }
 
     public void salvarArquivo() {
         arquivo.salvarEstoque(this);
     }
 
+    //Case para vendas
     public void menuestoque(String nomeProduto, int quantidadevend) throws EstoqueInsuficienteException {
         switch (nomeProduto.toLowerCase()) {
             case "carne":
